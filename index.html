@@ -9,43 +9,42 @@
 </head>
 <body>
     <div id="outerBody">
-        <div id="screen" class="part">1234</div>
+        <div id="screen" class="part"></div>
 
         <div class="button">
             <div id="firstRow" class="row">
-                <div class="leftmost" id="ac">AC</div>
-                <div class="dlt">C</div>
-                <div class="dlt">←</div>
-                <div class="sign">%</div>
+                <div class="leftmost" id="ac" onclick="ac()">AC</div>
+                <div class="dlt" onclick="c()">C</div>
+                <div class="dlt" onclick="del()">←</div>
+                <div class="sign" onclick="inputSymbol(4)">%</div>
             </div>
             <div class="row">
-                <div class="leftmost">7</div>
-                <div>8</div>
-                <div>9</div>
-                <div class="sign">÷</div>
+                <div class="leftmost" onclick="inputNum(7)">7</div>
+                <div onclick="inputNum(8)">8</div>
+                <div onclick="inputNum(9)">9</div>
+                <div class="sign" onclick="inputSymbol(3)">÷</div>
             </div>
             <div class="row">
-                <div class="leftmost">4</div>
-                <div>5</div>
-                <div>6</div>
-                <div class="sign">×</div>
+                <div class="leftmost" onclick="inputNum(4)">4</div>
+                <div onclick="inputNum(5)">5</div>
+                <div onclick="inputNum(6)">6</div>
+                <div class="sign" onclick="inputSymbol(2)">×</div>
             </div>
             <div class="row">
-                <div class="leftmost">1</div>
-                <div>2</div>
-                <div>3</div>
-                <div class="sign">−</div>
+                <div class="leftmost" onclick="inputNum(1)">1</div>
+                <div onclick="inputNum(2)">2</div>
+                <div onclick="inputNum(3)">3</div>
+                <div class="sign" onclick="inputSymbol(1)">−</div>
             </div>
             <div class="row">
-                <div class="leftmost">0</div>
-                <div>.</div>
-                <div id="eq">=</div>
-                <div class="sign">+</div>
+                <div class="leftmost" onclick="inputNum(0)">0</div>
+                <div onclick="inputDot()">.</div>
+                <div id="eq" onclick="eval()">=</div>
+                <div class="sign" onclick="inputSymbol(0)">+</div>
             </div>
         <div class="row">
-
-        
         </div>
     </div>
+<script src="script.js"></script>
 </body>
 </html>
