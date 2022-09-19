@@ -1,0 +1,101 @@
+/*  #525E75 açık laci 
+    F1DDBF krem 
+    78938A koyumsu yeşil
+    92BA92 biraz daha açık yeşil
+*/
+body{
+    background-color: #ffe;
+    font-family: "Calibri", Arial, sans-serif;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */      
+}
+#outerBody{
+    margin: auto;
+    text-align: center;
+    padding-top: 2.5vh; 
+    width: 46.5vh;
+    height: 70vh;
+    max-width: 95vw;
+    min-width: 42vh;
+    border-radius: 2vh;
+    background-color: #234;
+    box-shadow: 0.3vh 0.3vh #ffe, 1vh 1vh #567 ;
+    border: solid #012 0.2em;
+}
+#screen{
+    margin:auto;
+    padding: 0.15vh;
+    height: 10.5vh;
+    width: 42vh;
+    border-radius: 1vh;
+    text-align: right;
+    font-size: 6vh;
+    line-height: 10.5vh;
+    background-color: #ccf0cc;
+    border: 0.75vh solid #012;
+    box-shadow: 0.3vh 0.3vh #ffe, -0.3vh -0.3vh #ffe, 0.3vh -0.3vh #ffe, -0.3vh 0.3vh #ffe;
+}
+.row div{
+    font-size: 8vh;
+    color: #ffe;
+    line-height: 9vh;
+    vertical-align: middle;
+    width: 9vh;
+    height: 9vh;
+    margin: 0px;
+    margin-left:1.5vh;
+    background-color: #687;
+    border-radius: 2vh;
+    border: 0.25vh solid #012;
+    box-shadow: 0.1vh 0.1vh #ddc, -0.1vh -0.1vh #ddc,-0.1vh 0.1vh #ddc,0.1vh -0.1vh #ddc;
+}
+.row div.leftmost{
+    margin-left: 0px;
+}
+.row{
+    justify-content: center;
+    display: flex;
+    margin-top: 1.5vh;
+    line-height: 0px;
+}
+.row div:hover{
+    text-shadow: 0.15vh 0.15vh #aab, -0.15vh -0.15vh #456,-0.15vh 0.15vh #456,0.15vh -0.15vh #456;
+    border: 0.25vh solid #687;
+    color:#687;
+    background-color: #ffe;
+}
+div.sign{
+    background-color: #c9b;
+}
+div.sign:hover{
+    color:#c9b;
+    border-color:#c9b;
+}
+#eq{
+    background-color: #eed;
+    color:#234;
+    border-color: #234;
+    text-shadow: 0.15vh 0.15vh #aab, -0.15vh -0.15vh #456,-0.15vh 0.15vh #456,0.15vh -0.15vh #456;
+}
+#eq:hover{
+    background-color: #234;
+    color: #eed;
+}
+#ac{
+    font-size: 5.5vh;
+    background-color: #b20;
+}
+#ac:hover{
+    background-color: #eed;
+    color: #b20;
+    border-color:#b20;
+}
+.row div:active, #eq:active, #ac:active{
+    color: #eed;
+    background-color: #eed;
+}
+#firstRow{
+    margin-top: 2.25vh;
+}
