@@ -36,34 +36,41 @@ function del(){
 
 let symbols=["+","-","*","/","%"];
 function inputSymbol(num){
-    if(calculationArray[1]!=undefined){eval();}
+
+    if(calculationArray[1]){
+        eval();
+    }
+
     symbol=symbols[num];
 
     if (symbol =="-" && screenContainer == ""){
+        if(!calculationArray[1]){
+            calculationArray[0]=0;
+            calculationArray[1]="+";
+        }
         screenContainer+="-";
         refreshScreen();
         return;
     }
 
-    if(calculationArray)
-
     calculationArray[0] = Number(screenContainer);
     calculationArray[1] = symbol;
     c();
     refreshScreen(calculationArray[0]);
+
 }
 function eval(){
     let result;
-    
-    if (Number(screenContainer) == ""){
-        result=calculationArray[0]
-    }
-    else if (calculationArray[0]==undefined){
-        result=Number(screenContainer);
-    }
 
-    else{
-        calculationArray[2]=Number(screenContainer);
+    console.log(screenContainer)
+
+    if (calculationArray.length==0){return;}
+    if (!calculationArray[1]){result=calculationArray[0];}
+    if (calculationArray[0] && calculationArray[1] && screenContainer==""){
+        result=calculationArray[0];
+    }
+    else {
+        calculationArray[2] = Number(screenContainer);
 
         switch (calculationArray[1]){
             case "+":
@@ -81,23 +88,38 @@ function eval(){
             case "%":
                 result = (calculationArray[0]/100)*calculationArray[2];
                 break;
+                
         }
+
     }
-    calculationArray=[result];
-    screenContainer=String(result);
+    if(result != Math.trunc(result) || result > 1e10){
+        result=result.toPrecision(4);
+    }
+    console.log(calculationArray[0], calculationArray[1],calculationArray[2])
+    console.log(result);
+    ac();
+    calculationArray[0]=result;
+    screenContainer=result;
     refreshScreen();
+    if (result==Infinity){
+        ac();
+        refreshScreen(":)");
+    }
 }
+
 
 //Klavye event listener
 document.body.addEventListener("keydown", e => {
-    if (Number(e.key)<10 && Number(e.key)>=0){
-        inputNum(e.key);
-    }
-    if(e.key == "Delete" || e.key == "Backspace"){
-        del();
-    }
-    if(e.key=="." || e.key==","){
-        inputDot();
-    }
+    
+    if (Number(e.key)<10 && Number(e.key)>=0){inputNum(e.key);}
+    if(e.key == "Delete" || e.key == "Backspace"){del();}
+    if(e.key=="." || e.key==","){inputDot();}
     console.log(e.key);
+    if(e.key == "+") inputSymbol(0);
+    if(e.key == "-") inputSymbol(1);
+    if(e.key == "*") inputSymbol(2);
+    if(e.key == "/") inputSymbol(3);
+    if(e.key == "%") inputSymbol(4);
+    if(e.key== "Enter") eval();
+
 });
